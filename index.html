@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okan Yaldız | Endüstri Mühendisliği & AI</title>
+    <meta name="description" content="Okan Yaldız - Manisa Celal Bayar Üniversitesi Endüstri Mühendisliği öğrencisi. Veri bilimi, makine öğrenmesi ve süreç optimizasyonu üzerine projeler.">
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="theme-color" content="#00ff88">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22><circle cx=%2225%22 cy=%2225%22 r=%2220%22 fill=%22none%22 stroke=%22%2300ff88%22 stroke-width=%222%22/><circle cx=%2225%22 cy=%2225%22 r=%223%22 fill=%22%2300ff88%22/><path d=%22M25 5 L25 15 M45 25 L35 25 M25 45 L25 35 M5 25 L15 25%22 stroke=%22%2300ff88%22 stroke-width=%222%22/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+    <canvas id="particles"></canvas>
+
+    <div id="loading" class="loading-screen">
+        <div class="loading-animation">
+            <div class="ai-brain">
+                <div class="neuron"></div><div class="neuron"></div><div class="neuron"></div>
+                <div class="connection"></div><div class="connection"></div><div class="connection"></div>
+            </div>
+            <div class="loading-text">Sistemler Yükleniyor...</div>
+            <div class="progress-bar"><div class="progress"></div></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="25" cy="25" r="3" fill="currentColor"/><path d="M25 5 L25 15 M45 25 L35 25 M25 45 L25 35 M5 25 L15 25" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <span>Okan Yaldız</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link active">Ana Sayfa</a></li>
+                <li><a href="#about" class="nav-link">Hakkımda</a></li>
+                <li><a href="#portfolio" class="nav-link">Portföy</a></li>
+                <li><a href="#dataviz" class="nav-link">Veri Analizi</a></li>
+                <li><a href="#ai-lab" class="nav-link">AI Deneyleri</a></li>
+                <li><a href="#games" class="nav-link">Oyun Alanı</a></li>
+                <li><a href="#blog" class="nav-link">Yazılar</a></li>
+                <li><a href="#contact" class="nav-link">İletişim</a></li>
+            </ul>
+            <div class="theme-toggle"><span class="theme-icon">🌙</span></div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-greeting reveal-up"><span class="greeting-text">Merhaba, ben</span></div>
+                    <h1 class="hero-title reveal-up" data-delay="0.2"><span class="name-text">Okan Yaldız</span></h1>
+                    <div class="hero-subtitle reveal-up" data-delay="0.4">
+                        <div class="subtitle-line"><span class="highlight">Endüstri Mühendisliği Öğrencisi</span></div>
+                        <div class="subtitle-line"><span class="ai-text">Veri Bilimi & Makine Öğrenmesi</span></div>
+                    </div>
+                    <p class="hero-description reveal-up" data-delay="0.6">Endüstriyel süreçleri veri bilimi ve makine öğrenmesiyle optimize ederek geleceğin verimli sistemlerini tasarlıyorum.</p>
+                    <div class="hero-stats reveal-up" data-delay="0.8">
+                        <div class="stat-item"><span class="stat-number" data-count="3">0</span><span class="stat-label">Proje</span></div>
+                    </div>
+                    <div class="hero-buttons reveal-up" data-delay="1">
+                        <a href="#portfolio" class="btn btn-primary">Projelerimi Gör</a>
+                        <a href="#contact" class="btn btn-secondary">İletişime Geç</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="ai-visualization"><div class="central-node"></div></div>
+                </div>
+            </div>
+            <div class="scroll-indicator"><div class="scroll-text">Keşfet</div><div class="scroll-arrow"></div></div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-subtitle">Yolculuğum</span>
+                    <h2 class="section-title">Hakkımda</h2>
+                    <p class="section-description">Analitik düşünce yapısını teknoloji tutkusuyla birleştiren, problem çözmeye odaklı bir mühendis adayı.</p>
+                </div>
+                <div class="timeline reveal-up">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🎓</div>
+                        <div class="timeline-content">
+                            <h3>Lise Eğitimi</h3>
+                            <p>[Lisenizin Adı] | [Mezuniyet Yılı]</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🚀</div>
+                        <div class="timeline-content">
+                            <h3>Üniversite Başlangıcı</h3>
+                            <p>Manisa Celal Bayar Üniversitesi - Endüstri Mühendisliği | [Başlangıç Yılı]</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">💡</div>
+                        <div class="timeline-content">
+                            <h3>Veri Bilimine İlk Adım</h3>
+                            <p>Python ve temel veri analizi kütüphaneleri (Pandas, NumPy) üzerine yoğunlaşma.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🤖</div>
+                        <div class="timeline-content">
+                            <h3>Makine Öğrenmesi Keşfi</h3>
+                            <p>İlk makine öğrenmesi modellerini (Regresyon, Sınıflandırma) Scikit-learn ile geliştirme.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-subtitle">Çalışmalarım</span>
+                    <h2 class="section-title">Portföy</h2>
+                    <p class="section-description">Veri bilimi ve mühendislik alanındaki yetkinliklerimi sergilediğim projeler.</p>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-project-id="0">
+                        <div class="portfolio-card"><div class="card-image"><div class="project-icon">📈</div></div><div class="card-content"><div class="project-category">MAKİNE ÖĞRENMESİ</div><h3>Talep Tahmin Modeli</h3><p>Tarihsel satış verilerini kullanarak bir perakende şirketi için gelecekteki ürün talebini tahmin eden zaman serisi analizi projesi.</p><div class="tech-stack"><span>Python</span><span>Pandas</span><span>Prophet</span></div></div></div>
+                    </div>
+                    <div class="portfolio-item" data-project-id="1">
+                         <div class="portfolio-card"><div class="card-image"><div class="project-icon">🏭</div></div><div class="card-content"><div class="project-category">SÜREÇ OPTİMİZASYONU</div><h3>Üretim Hattı Simülasyonu</h3><p>Bir montaj hattındaki darboğazları tespit etmek ve verimliliği artırmak için SimPy tabanlı bir simülasyon modeli geliştirildi.</p><div class="tech-stack"><span>Python</span><span>SimPy</span><span>Matplotlib</span></div></div></div>
+                    </div>
+                     <div class="portfolio-item" data-project-id="2">
+                        <div class="portfolio-card"><div class="card-image"><div class="project-icon">🤖</div></div><div class="card-content"><div class="project-category">BİLGİSAYARLI GÖRÜ</div><h3>Görüntü ile Kalite Kontrol</h3><p>Üretim bandından geçen ürünlerin görüntülerinden kusurlu olanları tespit eden bir evrişimli sinir ağı (CNN) modeli.</p><div class="tech-stack"><span>TensorFlow</span><span>OpenCV</span><span>Python</span></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dataviz" class="dataviz">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-subtitle">İNTERAKTİF ANALİZ</span>
+                    <h2 class="section-title">Veri Görselleştirme</h2>
+                    <p class="section-description">Örnek üretim verileri üzerinde D3.js ile oluşturulmuş interaktif bir grafik. Barların üzerine gelerek detayları görebilirsiniz.</p>
+                </div>
+                <div id="chart-container" class="chart-container reveal-up"></div>
+            </div>
+        </section>
+
+        <section id="ai-lab" class="ai-lab">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-subtitle">CANLI DEMO</span>
+                    <h2 class="section-title">AI Deneyleri</h2>
+                    <p class="section-description">Google Gemini & Imagen modelleriyle desteklenen gerçek zamanlı interaktif araçlar.</p>
+                </div>
+                <div class="lab-content">
+                    <div class="lab-tabs">
+                        <div class="tab-nav">
+                            <button class="tab-btn active" data-tab="chatbot"><span class="tab-icon">🤖</span><span>AI Asistan</span></button>
+                            <button class="tab-btn" data-tab="summarizer"><span class="tab-icon">📄</span><span>Metin Özetleyici</span></button>
+                            <button class="tab-btn" data-tab="image-generator"><span class="tab-icon">🖼️</span><span>Görüntü Üretici</span></button>
+                            <button class="tab-btn" data-tab="optimizer"><span class="tab-icon">⚙️</span><span>Süreç Optimize Edici</span></button>
+                        </div>
+                    </div>
+                    <div class="lab-panels">
+                        <div id="chatbot" class="lab-panel active">
+                            <div class="panel-header"><h3>AI Asistan</h3><p>Veri bilimi, mühendislik veya projelerim hakkında sorularınızı sorun.</p></div>
+                            <div class="chat-interface"><div class="chat-messages" id="chat-messages"><div class="message bot-message"><div class="avatar">🤖</div><div class="message-content">Merhaba! Ben Okan'ın AI asistanıyım. Size nasıl yardımcı olabilirim?</div></div></div><div class="chat-input"><input type="text" id="chat-input" placeholder="Mesajınızı yazın..."><button id="send-message"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg></button></div></div>
+                        </div>
+                        <div id="summarizer" class="lab-panel">
+                            <div class="panel-header"><h3>Metin Özetleyici</h3><p>Uzun bir metni yapay zeka ile anahtar noktalarına indirgeyin.</p></div>
+                            <div class="demo-interface"><textarea id="summarizer-input" placeholder="Özetlemek istediğiniz uzun metni buraya yapıştırın..." rows="8"></textarea><button id="summarize-text" class="demo-btn">Özetle</button><div id="summarizer-result" class="result-display"><div class="result-placeholder">Özet burada görünecek...</div></div></div>
+                        </div>
+                        <div id="image-generator" class="lab-panel">
+                             <div class="panel-header"><h3>Görüntü Üretici</h3><p>Hayalinizdeki görseli metin olarak tarif edin, yapay zeka sizin için çizsin.</p></div>
+                             <div class="demo-interface"><div class="image-prompt-container"><input type="text" id="image-prompt-input" placeholder="Örn: Ay'da oturan bir astronot, gerçekçi stil"><button id="generate-image" class="demo-btn">Oluştur</button></div><div id="image-generator-result" class="result-display image-result"><div class="result-placeholder">Oluşturulan görsel burada görünecek...</div></div></div>
+                        </div>
+                        <div id="optimizer" class="lab-panel">
+                            <div class="panel-header"><h3>Süreç Optimize Edici</h3><p>Adımları sürükleyip bırakarak en verimli süreci bulun.</p></div>
+                            <div class="optimizer-interface">
+                                <div class="optimizer-column">
+                                    <h4>Mevcut Süreç (Sürükle & Bırak)</h4>
+                                    <ul id="process-steps" class="step-list"></ul>
+                                </div>
+                                <div class="optimizer-column">
+                                    <h4>AI Tarafından Optimize Edilmiş Süreç</h4>
+                                    <ul id="optimized-steps" class="step-list"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="games" class="games">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-subtitle">Eğlenceli Aktiviteler</span>
+                    <h2 class="section-title">Oyun Alanı</h2>
+                    <p class="section-description">Strateji ve mantık becerilerinizi test etmek için mini oyunlar.</p>
+                </div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="game-header"><h3>Tic-Tac-Toe (XOX)</h3><p>Yenilmez yapay zekaya karşı klasik XOX oyunu.</p></div>
+                        <div class="game-content">
+                            <div class="game-interface" id="tictactoe-game">
+                                <p class="game-status" id="tictactoe-status">Senin sıran (X)!</p>
+                                <div class="tictactoe-board" id="tictactoe-board"></div>
+                                <button id="reset-tictactoe" class="game-btn secondary">Yeniden Başla</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-header"><h3>🧠 Hafıza Matrisi</h3><p>Görsel hafızanızı test edin ve deseni tekrarlayın.</p></div>
+                        <div class="game-content">
+                            <div class="game-interface" id="memory-game">
+                                 <div class="game-stats"><span>Seviye: <span id="memory-level">1</span></span><span>Skor: <span id="memory-score">0</span></span></div>
+                                <p class="game-status" id="memory-status">Başlamak için butona tıkla.</p>
+                                <div class="memory-grid" id="memory-grid"></div>
+                                <button id="start-memory" class="game-btn">Başla</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-header"><h3>🔓 Kod Kırıcı</h3><p>Gizli renk kodunu 8 denemede çözebilir misin?</p></div>
+                        <div class="game-content">
+                            <div class="game-interface" id="code-breaker-game">
+                                <div class="code-breaker-board" id="code-breaker-board"></div>
+                                <div class="color-palette" id="color-palette"></div>
+                                 <p class="game-status" id="code-breaker-status">Renkleri seç ve tahminini kontrol et.</p>
+                                 <div class="game-controls">
+                                    <button id="check-guess" class="game-btn">Tahmini Kontrol Et</button>
+                                    <button id="reset-code-breaker" class="game-btn secondary">Yeni Oyun</button>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-subtitle">Paylaşımlarım</span>
+                    <h2 class="section-title">Yazılar</h2>
+                    <p class="section-description">Veri bilimi, endüstri mühendisliği ve teknoloji üzerine düşüncelerim ve deneyimlerim.</p>
+                </div>
+                <div class="blog-grid" id="blog-grid">
+                    <!-- Blog posts will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-subtitle">Bağlantı Kuralım</span>
+                    <h2 class="section-title">İletişim</h2>
+                    <p class="section-description">Projeler, iş birlikleri veya bir kahve eşliğinde teknoloji sohbeti için bana ulaşın!</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info reveal-left">
+                        <div class="contact-card" data-tilt>
+                            <h3>Hadi Konuşalım! 💬</h3>
+                            <p>Yeni fikirlere, projelere ve iş birliklerine her zaman açığım. Aşağıdaki kanallardan veya yandaki form ile bana ulaşabilirsiniz.</p>
+                            <div class="contact-methods">
+                                <div class="contact-method"><div class="method-icon">📧</div><div class="method-info"><h4>Email</h4><a href="mailto:okan.yaldiz@email.com">okan.yaldiz@email.com</a></div></div>
+                                <div class="contact-method"><div class="method-icon">💼</div><div class="method-info"><h4>LinkedIn</h4><a href="#" target="_blank">linkedin.com/in/okanyaldiz</a></div></div>
+                                <div class="contact-method"><div class="method-icon">🐙</div><div class="method-info"><h4>GitHub</h4><a href="#" target="_blank">github.com/okanyaldiz</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-container reveal-right">
+                         <form class="contact-form" id="contactForm">
+                             <div class="form-group"><label for="name">Ad Soyad</label><input type="text" id="name" name="name" required></div>
+                             <div class="form-group"><label for="email">Email Adresiniz</label><input type="email" id="email" name="email" required></div>
+                             <div class="form-group"><label for="message">Mesajınız</label><textarea id="message" name="message" rows="5" required></textarea></div>
+                             <button type="submit" class="submit-btn">Mesajı Gönder</button>
+                             <div id="form-status"></div>
+                         </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="copyright"><p>&copy; 2025 Okan Yaldız. Tüm hakları saklıdır.</p></div>
+                <div class="footer-meta"><span>Made with ❤️ and ☕</span></div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
+    
+    <div id="command-palette" class="command-palette-overlay">
+        <div class="command-palette">
+            <input type="text" id="command-input" placeholder="Bir komut yazın veya arama yapın...">
+            <ul id="command-results"></ul>
+        </div>
+    </div>
+
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+    
